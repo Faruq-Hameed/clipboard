@@ -23,15 +23,20 @@
 
 header{
     background-image: url(./images/bg-header-desktop.png);
+    background-size: cover;
 }
 .header-container{
     display: grid;
     row-gap: 1.8rem;
-    width: min(100vw, 650px );
+    width: min(fit-content, 650px );
     margin: auto;
     justify-items: center;
-    /* border: 2px solid red; */
-    padding: 3.5rem 10px 10px 10px;
+    padding: 3rem 0px 0.5rem 0px;
+}
+
+.header-texts{
+    margin: auto;
+    width: min(90vw, 650px );
 }
 
 .clipbord-icon{
@@ -63,7 +68,7 @@ h1,h2,h3{
 }
 
 p{
-    line-height: 1.2rem;
+    line-height: 1.5rem;
     color: hsl(201, 11%, 66%);
 }
 
@@ -73,7 +78,7 @@ p{
     row-gap: 1rem;
 }
 button{
-    width: min(40vw, 200px );
+    width: 200px;
     padding: 0.6rem 0px;
     border-radius: 1rem;
     font-size: 16px;
@@ -113,13 +118,15 @@ button{
 }
 
 .section-header-texts{
-    width: min(100vw, 640px );
+    width: min(90vw, 640px );
     margin: auto;
     padding: 5px;
     display: grid;
     row-gap: 0.8rem;
 }
-
+h2{
+    font-size: 30.8px;
+}
 .section-header-texts p{
     font-size: 16.8px;
 }
@@ -171,19 +178,22 @@ button{
     display: grid;
     row-gap: 4rem;
     padding: 3rem 0px;
-    padding: 3rem;
     overflow: hidden;
-    justify-content: center;
+    justify-items: center;
+    /* border: 2px solid red; */
 }
 
 .workflow-items-one{
-    column-gap: 3vw;
-    width: 100%; 
+    column-gap: 3rem;
+    row-gap: 4rem;
+    width: 100%;
+    justify-content: center;
 }
 
 .workflow-header-texts{
-    width: min(30vw, 310px );
+    /* width: min(100%, 310px ); */
     row-gap: 0.5rem;
+    /* border: 2px solid red; */
 
 }
 
@@ -196,7 +206,8 @@ button{
     display: grid;
     row-gap: 2rem;
     justify-content: center;
-    width: 30%;
+    width: 24%;
+    /* border: 2px solid red; */
 }
 .sub-header-texts{
     width: min(50vw, 300px );
@@ -210,14 +221,19 @@ button{
 
 .workflow-items-two{
     justify-content: space-between; 
-    width: 90vw;
-    
+    width: 80%;
+    /* border: 2px solid red; */
+    row-gap: 4rem;
+    /* padding: 0px 2rem 0px 2rem; */
+    /* column-gap: 2rem; */
 }
 
 .workflow-logo{
     display: grid;
-    align-items: center;;
-    width: 15%;
+    align-items: center;
+    width: 10%;
+    padding: 0px 2rem;
+    /* border: 2px solid red; */
 }
 
 
@@ -227,8 +243,10 @@ button{
     padding: 3rem 0rem;
     padding-bottom: 6rem;
     justify-items: center;
-    width: min(90vw, 650px );
+    width: min(fit-content, 650px );
     margin: auto;
+    overflow-x: hidden;
+
 
 }
 
@@ -236,16 +254,20 @@ footer{
     color: hsl(210, 10%, 33%);
     background-color: rgb(247, 248, 251);
     padding: 2rem;
-    padding-bottom: 0px;
     display: grid;
     row-gap: 2rem;
+    /* border: 2px solid red; */
+    justify-items: center;
 }
 
 .footer{
-    display: grid;
-    grid-template-columns: 5% 50% 10%;
+    width: 70%;
     justify-content: space-between;
     align-items: center;
+    row-gap: 2rem;
+    /* column-gap: 5%; */
+    /* border: 2px solid red; */
+    padding: 10px;
 }
 
 .footer-clipboard{
@@ -255,22 +277,30 @@ footer{
 
 .footer-list{
     display: grid;
-    grid-template-columns:repeat(3, 1fr) ;
-    column-gap: 0px;
+    grid-template-columns:repeat(3, 150px) ;
     list-style: none;
     row-gap: 2rem;
-    
+    justify-content: flex-end;
+    /* border: 2px solid red; */
+    margin: auto;
 }
 
 .socials-list{
+    display: flex;
     list-style: none;
     justify-content: space-between;
-    column-gap: 1vw;
-    align-items: center;;
+    width: 100px;
+    /* column-gap: 15%; */
+    align-items: center;
+    cursor: pointer;
+    /* border: 2px solid red; */
+    margin: auto;
+
 }
 
 .social-icon:hover{
-    width: 35%;
+    width: 30%;
+    color: rgb(29, 29, 31) !important;
 }
 
 .footer-list li{
@@ -289,6 +319,11 @@ a{
 }
 /* I am yet to complete the mobile version */
 @media screen and (max-width:720px){
+    footer{
+        justify-content: center;
+
+    }
+
     .flex{
         flex-direction: column;
         width: 100vw;
@@ -299,8 +334,32 @@ a{
     }
 
     .workflow-logo{
-        display: grid;
-        align-items: center;;
-        width: 15%;
+        width: 30%;
+        margin: auto;
     }
+
+    .icon-and-texts{
+        width: 80%;
+        margin: auto;
+    }
+
+    .footer{
+        margin: auto;
+    }
+
+    .footer-list{
+        grid-template-columns: 150px 150px;
+        justify-content: center;
+    }
+
+   
+}
+
+@media screen and (max-width:412px){
+
+
+.footer-list{
+    grid-template-columns: 1fr;
+}
+
 }
